@@ -79,7 +79,11 @@
 	      	            !execution(* getPK(..))" />  	            
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
-	
+	<bean id="cuppytrailSystemSetup"
+    	class="de.hybris.platform.cuppytrail.systemsetup.CuppyTrailSystemSetup"
+    	scope="tenant">
+    	<property name="importService" ref="importService" />
+	</bean>
 			
 			
 </beans>
