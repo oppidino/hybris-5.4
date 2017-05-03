@@ -41,6 +41,7 @@ public class CreateMenuJob extends AbstractJobPerformable<CronJobModel>
 		final MenuModel menu = modelService.create(MenuModel.class);
 		menu.setCode("1");
 		menu.setName("menu del giorno");
+		menu.setRecipes(recipesList);
 		modelService.save(menu);
 		return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
 	}
