@@ -31,6 +31,11 @@
 	       <sourceElement type="Recipe" qualifier="recipe" cardinality="one" />
 	       <targetElement type="RecipeEntry" qualifier="recipeEntries" cardinality="many"/>
 	    </relation>
+	    <relation code="MenuRecipeRelation" localized="false" generate="true" autocreate="true">
+	       <deployment table="MenuRecipeRelation" typecode="10506" />
+	       <sourceElement type="Menu" qualifier="menus" cardinality="many" />
+	       <targetElement type="Recipe" qualifier="recipes" cardinality="many"/>
+	    </relation>
 	</relations>
 
 	<itemtypes>
@@ -104,6 +109,20 @@
                 </attribute>
                 <attribute qualifier="unit" type="Unit">
                     <description>Unit</description>
+                    <persistence type="property" />
+                </attribute>
+            </attributes>
+        </itemtype>
+        
+        <itemtype code="Menu" generate="true" autocreate="true">
+            <deployment table="Menu" typecode="10505" />
+            <attributes>
+            	 <attribute qualifier="code" type="java.lang.String" >
+                    <persistence type="property"/>
+                    <modifiers optional="false" unique="true"/>
+                </attribute>
+                <attribute qualifier="name" type="java.lang.String">
+                    <description>Name</description>
                     <persistence type="property" />
                 </attribute>
             </attributes>

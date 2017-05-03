@@ -17,3 +17,6 @@ INSERT_UPDATE RecipeEntry;	food(code)[unique=true];amount;name[lang=en];unit(cod
 							;3;4;uova;pieces
 							;4;2;insaccato;pieces
 							;7;5;pane;pieces
+
+INSERT_UPDATE CronJob; code[unique=true];job(code);singleExecutable;sessionLanguage(isocode)
+;createMenuCronJob;createMenuJob;false;en

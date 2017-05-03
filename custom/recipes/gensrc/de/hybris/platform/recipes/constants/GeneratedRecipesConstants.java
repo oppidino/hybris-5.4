@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2-mag-2017 15.39.55                         ---
+ * --- Generated at 3-mag-2017 11.47.12                         ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -29,6 +29,7 @@ public class GeneratedRecipesConstants
 	{
 		public static final String DIFFICULTYENUM = "DifficultyEnum".intern();
 		public static final String FOOD = "Food".intern();
+		public static final String MENU = "Menu".intern();
 		public static final String RECIPE = "Recipe".intern();
 		public static final String RECIPEENTRY = "RecipeEntry".intern();
 	}
@@ -47,6 +48,7 @@ public class GeneratedRecipesConstants
 	}
 	public static class Relations
 	{
+		public static final String MENURECIPERELATION = "MenuRecipeRelation".intern();
 		public static final String RECIPERECIPEENTRYRELATION = "RecipeRecipeEntryRelation".intern();
 	}
 	
