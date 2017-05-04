@@ -31,7 +31,25 @@
 	
 	<bean id="stadiumListener" class="de.hybris.platform.cuppytrail.events.StadiumEventListener"/>
 	
+	<bean id="registrationConfirmationActionJob" class="de.hybris.platform.cuppytrail.workflow.RegistrationConfirmationActionJob" >
+   	<property name="modelService" ref="modelService" />
+   	<property name="mailService" ref="mailService" />
+	</bean>
+     
+	<bean id="registrationDeclineActionJob" class="de.hybris.platform.cuppytrail.workflow.RegistrationDeclineActionJob" >
+   	<property name="modelService" ref="modelService" />
+   	<property name="mailService" ref="mailService" />
+	</bean>
 	
+	<bean id="playerVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="VoidInterceptor" />
+        <property name="typeCode" value="Player" />
+        <property name="replacedInterceptors" ref="playerConfirmedInterceptor"/>
+    </bean>
+    
+    <bean id="playerService" class="de.hybris.platform.cuppytrail.impl.CuppytrailPlayerService" />
+
+
 	<!-- The hybris platform provides one single Spring application context for beans located at the jalo layer. Each extension can add 
 		beans to this context by specifying them at this configuration file. You can use and/or redefine beans defined at configuration files 
 		of other extensions as well as adding new one. If you want to locate this file at a different location or want to use several files 
